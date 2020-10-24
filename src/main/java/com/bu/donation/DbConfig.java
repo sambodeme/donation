@@ -48,7 +48,7 @@ public class DbConfig {
         return transactionManager;
     }
 
-    @Bean (name = "donationEntityManagerFactory")
+    @Bean (name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();

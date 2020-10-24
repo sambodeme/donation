@@ -2,10 +2,12 @@ package com.bu.donation.entity;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+@Entity
 public class Audit {
     private int idAudit;
     private BigDecimal amount;
@@ -15,7 +17,7 @@ public class Audit {
     private String userDetails;
 
     @Id
-    @Column(name = "idAudit", table = "audit", nullable = false)
+    @Column(name = "idAudit",  nullable = false)
     public int getIdAudit() {
         return idAudit;
     }
@@ -25,7 +27,7 @@ public class Audit {
     }
 
     @Basic
-    @Column(name = "amount", table = "audit", nullable = true, precision = 2)
+    @Column(name = "amount",  nullable = true, precision = 2)
     public BigDecimal getAmount() {
         return amount;
     }
@@ -35,7 +37,7 @@ public class Audit {
     }
 
     @Basic
-    @Column(name = "date", table = "audit", nullable = true)
+    @Column(name = "date",  nullable = true)
     public Date getDate() {
         return date;
     }
@@ -45,7 +47,7 @@ public class Audit {
     }
 
     @Basic
-    @Column(name = "iddonor", table = "audit", nullable = true)
+    @Column(name = "iddonor",  nullable = true)
     public Integer getIddonor() {
         return iddonor;
     }
@@ -55,7 +57,7 @@ public class Audit {
     }
 
     @Basic
-    @Column(name = "idpayment", table = "audit", nullable = true)
+    @Column(name = "idpayment", nullable = true)
     public Integer getIdpayment() {
         return idpayment;
     }
@@ -65,7 +67,7 @@ public class Audit {
     }
 
     @Basic
-    @Column(name = "userDetails", table = "audit", nullable = true, length = 45)
+    @Column(name = "userDetails", nullable = true, length = 45)
     public String getUserDetails() {
         return userDetails;
     }

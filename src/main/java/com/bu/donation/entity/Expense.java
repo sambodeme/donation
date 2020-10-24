@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+@Entity
 public class Expense {
     private int idExpense;
     private BigDecimal amount;
@@ -13,7 +14,7 @@ public class Expense {
     private Category categoryByIdcategory;
 
     @Id
-    @Column(name = "idExpense", table = "expense", nullable = false)
+    @Column(name = "idExpense", nullable = false)
     public int getIdExpense() {
         return idExpense;
     }
@@ -23,7 +24,7 @@ public class Expense {
     }
 
     @Basic
-    @Column(name = "amount", table = "expense", nullable = false, precision = 2)
+    @Column(name = "amount", nullable = false, precision = 2)
     public BigDecimal getAmount() {
         return amount;
     }
@@ -33,7 +34,7 @@ public class Expense {
     }
 
     @Basic
-    @Column(name = "date", table = "expense", nullable = false)
+    @Column(name = "date",  nullable = false)
     public Date getDate() {
         return date;
     }
@@ -43,7 +44,7 @@ public class Expense {
     }
 
     @Basic
-    @Column(name = "idcategory", table = "expense", nullable = false)
+    @Column(name = "idcategory", nullable = false)
     public int getIdcategory() {
         return idcategory;
     }
@@ -53,7 +54,7 @@ public class Expense {
     }
 
     @Basic
-    @Column(name = "comment", table = "expense", nullable = true, length = 128)
+    @Column(name = "comment",  nullable = true, length = 128)
     public String getComment() {
         return comment;
     }
@@ -89,7 +90,7 @@ public class Expense {
     }
 
     @ManyToOne
-    @JoinColumn(name = "idcategory", referencedColumnName = "idCategory", nullable = false, table = "expense")
+    @JoinColumn(name = "idcategory", referencedColumnName = "idCategory", nullable = false, insertable =  false, updatable = false)
     public Category getCategoryByIdcategory() {
         return categoryByIdcategory;
     }

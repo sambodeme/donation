@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+@Entity
 public class Donation {
     private int idDonation;
     private BigDecimal amount;
@@ -14,7 +15,7 @@ public class Donation {
     private Payment paymentByIdpayment;
 
     @Id
-    @Column(name = "idDonation", table = "donation", nullable = false)
+    @Column(name = "idDonation", nullable = false)
     public int getIdDonation() {
         return idDonation;
     }
@@ -24,7 +25,7 @@ public class Donation {
     }
 
     @Basic
-    @Column(name = "amount", table = "donation", nullable = true, precision = 2)
+    @Column(name = "amount",nullable = true, precision = 2)
     public BigDecimal getAmount() {
         return amount;
     }
@@ -34,7 +35,7 @@ public class Donation {
     }
 
     @Basic
-    @Column(name = "date", table = "donation", nullable = true)
+    @Column(name = "date",  nullable = true)
     public Date getDate() {
         return date;
     }
@@ -44,7 +45,7 @@ public class Donation {
     }
 
     @Basic
-    @Column(name = "iddonor", table = "donation", nullable = false)
+    @Column(name = "iddonor", nullable = false)
     public int getIddonor() {
         return iddonor;
     }
@@ -54,7 +55,7 @@ public class Donation {
     }
 
     @Basic
-    @Column(name = "idpayment", table = "donation", nullable = false)
+    @Column(name = "idpayment",  nullable = false)
     public int getIdpayment() {
         return idpayment;
     }
@@ -90,7 +91,7 @@ public class Donation {
     }
 
     @ManyToOne
-    @JoinColumn(name = "iddonor", referencedColumnName = "idDonor", nullable = false, table = "donation")
+    @JoinColumn(name = "iddonor", referencedColumnName = "idDonor", nullable = false, insertable =  false, updatable = false)
     public Donor getDonorByIddonor() {
         return donorByIddonor;
     }
@@ -100,7 +101,7 @@ public class Donation {
     }
 
     @ManyToOne
-    @JoinColumn(name = "idpayment", referencedColumnName = "idPayment", nullable = false, table = "donation")
+    @JoinColumn(name = "idpayment", referencedColumnName = "idPayment", nullable = false, insertable =  false, updatable = false)
     public Payment getPaymentByIdpayment() {
         return paymentByIdpayment;
     }

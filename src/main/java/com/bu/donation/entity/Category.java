@@ -2,14 +2,16 @@ package com.bu.donation.entity;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Category {
     private int idCategory;
     private String name;
 
     @Id
-    @Column(name = "idCategory", table = "category", nullable = false)
+    @Column(name = "idCategory",  nullable = false)
     public int getIdCategory() {
         return idCategory;
     }
@@ -19,7 +21,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "name", table = "category", nullable = true, length = 45)
+    @Column(name = "name",  nullable = true, length = 45)
     public String getName() {
         return name;
     }

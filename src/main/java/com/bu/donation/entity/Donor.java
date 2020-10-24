@@ -2,8 +2,10 @@ package com.bu.donation.entity;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Donor {
     private int idDonor;
     private String name;
@@ -13,7 +15,7 @@ public class Donor {
     private String type;
 
     @Id
-    @Column(name = "idDonor", table = "donor", nullable = false)
+    @Column(name = "idDonor", nullable = false)
     public int getIdDonor() {
         return idDonor;
     }
@@ -23,7 +25,7 @@ public class Donor {
     }
 
     @Basic
-    @Column(name = "name", table = "donor", nullable = true, length = 64)
+    @Column(name = "name",  nullable = true, length = 64)
     public String getName() {
         return name;
     }
@@ -33,7 +35,7 @@ public class Donor {
     }
 
     @Basic
-    @Column(name = "address", table = "donor", nullable = true, length = 128)
+    @Column(name = "address",  nullable = true, length = 128)
     public String getAddress() {
         return address;
     }
@@ -43,7 +45,7 @@ public class Donor {
     }
 
     @Basic
-    @Column(name = "email", table = "donor", nullable = true, length = 64)
+    @Column(name = "email", nullable = true, length = 64)
     public String getEmail() {
         return email;
     }
@@ -53,7 +55,7 @@ public class Donor {
     }
 
     @Basic
-    @Column(name = "phone", table = "donor", nullable = true, length = 32)
+    @Column(name = "phone", nullable = true, length = 32)
     public String getPhone() {
         return phone;
     }
@@ -63,7 +65,7 @@ public class Donor {
     }
 
     @Basic
-    @Column(name = "type", table = "donor", nullable = true, length = 1)
+    @Column(name = "type",  nullable = true, length = 1)
     public String getType() {
         return type;
     }

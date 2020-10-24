@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  * @description implements all data access methods
  * needed for Audit.
  */
-@Transactional("sdmsMainTransactionManager")
+@Transactional()
 @Service("auditService")
 
 public class AuditServiceImpl implements AuditService {
