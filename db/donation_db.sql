@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `donation_db`.`donor` (
   `address` VARCHAR(128) NULL,
   `email` VARCHAR(64) NULL,
   `phone` VARCHAR(32) NULL,
-  `type` VARCHAR(1) NULL COMMENT 'H for human and O for organisation',
+  `type` VARCHAR(1) NULL COMMENT 'H for people and O for organisation',
   PRIMARY KEY (`idDonor`))
 ENGINE = InnoDB;
 
